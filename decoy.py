@@ -95,6 +95,7 @@ class Decoy:
                 elif res[1] == "topo":
                     self.topo.setName(res[2])
                     self.n1.topo = res[2]
+                    self.n2.topo = res[2]
                 else:
                     print(res[1], " is not a node")
             elif res[0] == "create":

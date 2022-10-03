@@ -1,5 +1,3 @@
-
-
 from node import Node
 from decoy import Decoy
 
@@ -7,7 +5,7 @@ d = Decoy()
 
 d.topo.setName("topo1")
 d.n1.topo = "topo1"
-d.n2.topo = "topo1"
+# d.n2.topo = "topo1"
 
 d.topo.newTopo()
 
