@@ -4,7 +4,7 @@ from mininet.net import Mininet
 from mininet.node import Controller
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
-from tugBoat import getAll, getConnections
+from tugboat import getAll, getConnections
 
 topo = "topo1"
 
