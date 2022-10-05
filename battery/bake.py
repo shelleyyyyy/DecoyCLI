@@ -33,7 +33,7 @@ class Neo4jConnection:
 topo = "topo1"
 
 topo_decoy = {
-    "type": "controller",
+    "type": "topo",
     "name": topo,
     "conn": [
 

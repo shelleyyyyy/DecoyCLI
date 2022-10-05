@@ -56,7 +56,7 @@ class Decoy:
                 where n.name = "{0}"
                 match(n)-[*]-(c)
                 where c.name = "{3}"
-                create(h:host {{name: "{1}", type: "{2}", topo: "{0}"}})
+                create(h:{2} {{name: "{1}", type: "{2}", topo: "{0}"}})
                 create(h)-[:rel]->(c)
             """.format(*arr)
         )
@@ -75,10 +75,9 @@ class Decoy:
 
     def start(self):
         while True:
-            a = input('decoy> ')
+            a = input('decoy$ ')
 
             res = a.split()
-            # print("\n")
             if res[0] == "show":
                 self.show()
             elif res[0] == "set":
@@ -110,10 +109,5 @@ class Decoy:
                     elif res[2] == "n2":
                         self.linkNodes()
 
-
             elif res[0] == "help":
                 self.showOptions()
-
-            # print("\n")
-    
-
