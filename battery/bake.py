@@ -30,7 +30,7 @@ class Neo4jConnection:
                 session.close()
         return response
 
-topo = "topo1"
+topo = "topo11"
 
 topo_decoy = {
     "type": "topo",
@@ -45,7 +45,10 @@ topo_decoy = {
             "conn": [
                 {
                     "name": topo
-                }
+                },
+                {
+                    "name": "s3"
+                },
             ],
             "children": [
                  {
@@ -86,6 +89,54 @@ topo_decoy = {
                 },
             ]
         },    
+         {
+            "type": "switch",
+            "name": "s3",
+            "conn": [
+                {
+                    "name": topo
+                }
+            ],
+            "children": [
+                 {
+                    "type": "host",
+                    "name": "h11",
+                    "conn": [
+                        {
+                            "name": "s3"
+                        }
+                    ],
+                    "children": [
+                        
+                    ]
+                },
+                 {
+                    "type": "host",
+                    "name": "h9",
+                    "conn": [
+                        {
+                            "name": "s3"
+                        }
+                    ],
+                    "children": [
+                        
+                    ]
+                },
+                 {
+                    "type": "host",
+                    "name": "h8",
+                    "conn": [
+                        {
+                            "name": "s3"
+                        }
+                    ],
+                    "children": [
+                        
+                    ]
+                },
+            ]
+        },    
+        
         {
             "type": "switch",
             "name": "s2",

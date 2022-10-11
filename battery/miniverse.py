@@ -18,7 +18,7 @@ def emptyNet():
     print(getAll(topo))
     for x in getAll(topo):
         if x['type'] == "host":
-            host = net.addHost(x['name'])
+            host = net.addHost(x['name'], defaultRoute='via 10.0.0.7')
             nodes.append(host)
         elif x['type'] == "switch":
             switch = net.addSwitch(x['name'])
@@ -34,7 +34,7 @@ def emptyNet():
                 if k.name == y['name']:
                     net.addLink(x, k)
                 
-
+    net.addNAT().configDefault()
     info("start network...")
     net.start()
 
