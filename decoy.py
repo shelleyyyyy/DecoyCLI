@@ -29,17 +29,23 @@ class Decoy:
 
         arr = [self.topo.name, self.n1.name, self.n2.name]
 
+        # match(n:topo)
+        # where n.name = "{0}"
+        # match(n)-[*]-(c)
+        # where c.name = "{1}"
+        # match(i:topo)
+        # where i.name = "{0}"
+        # match(i)-[*]-(k)
+        # where k.name = "{2}"
+        # create(c)-[:rel]->(k)
+
         conn.query(
             """
-                match(n:topo)
-                where n.name = "{0}"
-                match(n)-[*]-(c)
-                where c.name = "{1}"
-                match(i:topo)
-                where i.name = "{0}"
-                match(i)-[*]-(k)
-                where k.name = "{2}"
-                create(c)-[:rel]->(k)
+                match(n)
+                where n.name = "{1}"
+                match(i)
+                where i.name = "{2}"
+                create(n)-[:rel]->(i)
             """.format(*arr)
         )
 
@@ -50,14 +56,19 @@ class Decoy:
 
         arr = [self.topo.name, self.n1.name, self.n1.type, self.n2.name]
 
+        # match(n:topo)
+        # where n.name = "{0}"
+        # match(n)-[*]-(c)
+        # where c.name = "{3}"
+        # create(h:{2} {{name: "{1}", type: "{2}", topo: "{0}"}})
+        # create(h)-[:rel]->(c)
+
         conn.query(
             """
-                match(n:topo)
-                where n.name = "{0}"
-                match(n)-[*]-(c)
-                where c.name = "{3}"
+                match(n)
+                where n.name = "{3}"
                 create(h:{2} {{name: "{1}", type: "{2}", topo: "{0}"}})
-                create(h)-[:rel]->(c)
+                create(h)-[:rel]->(n)
             """.format(*arr)
         )
 
