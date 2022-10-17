@@ -6,7 +6,7 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from tugboat import getAll, getConnections
 
-topo = "topo1"
+topo = "topo"
 
 def emptyNet():
     net = Mininet(controller=Controller)
@@ -17,12 +17,15 @@ def emptyNet():
     nodes = []
     print(getAll(topo))
     for x in getAll(topo):
-        if x['type'] == "host":
-            host = net.addHost(x['name'], defaultRoute='via 10.0.0.7')
-            nodes.append(host)
-        elif x['type'] == "switch":
-            switch = net.addSwitch(x['name'])
-            nodes.append(switch)
+        try:
+            if x['type'] == "host":
+                host = net.addHost(x['name'], defaultRoute='via 10.0.0.7')
+                nodes.append(host)
+            elif x['type'] == "switch":
+                switch = net.addSwitch(x['name'])
+                nodes.append(switch)
+        except:
+            pass
 
     info("Create links...")
 

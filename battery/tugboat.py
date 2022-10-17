@@ -97,3 +97,5 @@ def getConnections(t, p):
 
     return children
 
+
+print(getAll("topo"))

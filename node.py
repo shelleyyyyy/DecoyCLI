@@ -65,6 +65,6 @@ class Node:
         print(self.title, "type ---> ", self.type)
 
     def show(self):
-        print(self.title, "=>", self.name, ", ", self.title, "type => ", self.type)
+        print(self.title, "| name:", self.name, ", type:", self.type)
         # print(self.title, "type => ", self.type)
     
