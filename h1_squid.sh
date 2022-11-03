@@ -1,6 +1,6 @@
 #!/bin/bash
 while true
 do
-   mosquitto_pub -t "test" -m "from h1" -h "192.168.174.135"
+   mosquitto_pub -t "sim/tmp" -m $(( $RANDOM % 50 + 1 )) -h "192.168.1.177"
    sleep 3
 done

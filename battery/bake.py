@@ -88,55 +88,7 @@ topo_decoy = {
                     ]
                 },
             ]
-        },    
-         {
-            "type": "switch",
-            "name": "s3",
-            "conn": [
-                {
-                    "name": topo
-                }
-            ],
-            "children": [
-                 {
-                    "type": "host",
-                    "name": "h11",
-                    "conn": [
-                        {
-                            "name": "s3"
-                        }
-                    ],
-                    "children": [
-                        
-                    ]
-                },
-                 {
-                    "type": "host",
-                    "name": "h9",
-                    "conn": [
-                        {
-                            "name": "s3"
-                        }
-                    ],
-                    "children": [
-                        
-                    ]
-                },
-                 {
-                    "type": "host",
-                    "name": "h8",
-                    "conn": [
-                        {
-                            "name": "s3"
-                        }
-                    ],
-                    "children": [
-                        
-                    ]
-                },
-            ]
-        },    
-        
+        },            
         {
             "type": "switch",
             "name": "s2",
