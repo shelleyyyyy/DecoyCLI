@@ -17,7 +17,10 @@ class Topo:
             """.format(*arr)
         )
 
-        data = [r.data() for r in records]
+        try:
+            data = [r.data() for r in records]
+        except:
+            pass
 
         if len(data) > 0:
             return True
