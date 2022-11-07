@@ -49,5 +49,5 @@ class Topo:
         print("topo ---> ", self.name)
 
     def show(self):
-        print("topo =>", self.name)
+        print("topo | ", self.name)
 
