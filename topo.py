@@ -17,6 +17,7 @@ class Topo:
             """.format(*arr)
         )
 
+        data = ""
         try:
             data = [r.data() for r in records]
         except:
