@@ -51,8 +51,10 @@ RUN pip3 install mininet
 
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller 
 
+RUN python3 /miniverse.py
+
 EXPOSE 6633 6653 6640
+
 
 ENTRYPOINT ["/ENTRYPOINT.sh"]
 
-CMD [ "python3", "/miniverse.py" ]
