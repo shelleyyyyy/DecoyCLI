@@ -40,9 +40,16 @@ RUN apt install python3-pip -y
 
 # install dependencies
 
-RUN ls /
+RUN apt install mosquitto-clients -y
+
 
 # RUN pip3 install -r /requirements.txt
+RUN pip3 install neo4j
+RUN pip3 install mininet
+
+# create link to controller
+
+RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller 
 
 EXPOSE 6633 6653 6640
 
