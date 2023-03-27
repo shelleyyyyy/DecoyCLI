@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
     x11-xserver-utils \
     xterm \
+    nano \
  && rm -rf /var/lib/apt/lists/* \
  && touch /etc/network/interfaces \
  && chmod +x /ENTRYPOINT.sh

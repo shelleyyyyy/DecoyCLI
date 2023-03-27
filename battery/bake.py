@@ -30,7 +30,7 @@ class Neo4jConnection:
                 session.close()
         return response
 
-topo = "topo11"
+topo = "topo1"
 
 topo_decoy = {
     "type": "topo",
