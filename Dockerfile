@@ -36,7 +36,7 @@ RUN apt install python3.8 -y
 # install pip3
 
 RUN apt update -y
-RUN apt install python3-pip
+RUN apt install python3-pip -y
 
 # install dependencies
 
