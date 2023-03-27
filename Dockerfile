@@ -42,7 +42,7 @@ RUN apt install python3-pip -y
 
 RUN ls /
 
-RUN pip3 install -r /battery/requirements.txt
+RUN pip3 install -r requirements.txt
 
 EXPOSE 6633 6653 6640
 
