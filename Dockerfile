@@ -57,6 +57,6 @@ EXPOSE 6633 6653 6640
 
 ENTRYPOINT ["/ENTRYPOINT.sh"]
 
-CMD [ "python3", "/miniverse.py" ]
+CMD [ "python3", "/miniverse.py", "&"]
 
 # RUN python3 /miniverse.py
