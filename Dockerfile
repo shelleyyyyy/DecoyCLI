@@ -55,7 +55,8 @@ RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 EXPOSE 6633 6653 6640
 
-
 ENTRYPOINT ["/ENTRYPOINT.sh"]
 
-RUN python3 /miniverse.py
+CMD [ "python3", "/miniverse.py" ]
+
+# RUN python3 /miniverse.py
