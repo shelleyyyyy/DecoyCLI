@@ -40,7 +40,7 @@ RUN apt install python3-pip -y
 
 # install dependencies
 
-RUN pip install -r battery/requirements.txt
+RUN pip3 install -r battery/requirements.txt
 
 EXPOSE 6633 6653 6640
 
