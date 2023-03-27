@@ -7,6 +7,7 @@ COPY ENTRYPOINT.sh /
 
 COPY battery /
 COPY battery /
+COPY h1_squid.sh /
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
