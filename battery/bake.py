@@ -142,7 +142,7 @@ topo_decoy = {
     ]
 }
 
-conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="root")
+conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="securepassword123")
 
 def addNode(conn_arr, type, name, children):
     arr = [type, name, topo]
