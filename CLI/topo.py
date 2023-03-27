@@ -5,7 +5,7 @@ class Topo:
         self.name = None
 
     def exists(self):
-        conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="root")
+        conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="root")
 
         arr = [self.name]
 
@@ -33,7 +33,7 @@ class Topo:
             print("This topo already exists")
             return False
 
-        conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="root")
+        conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="root")
 
         arr = [self.name]
         conn.query(

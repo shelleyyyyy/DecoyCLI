@@ -52,7 +52,7 @@ class Decoy:
         print("created link from ", self.n1.name, " to ", self.n2.name)
 
     def genAndLink(self):
-        conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="root")
+        conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="root")
 
         arr = [self.topo.name, self.n1.name, self.n1.type, self.n2.name]
 
