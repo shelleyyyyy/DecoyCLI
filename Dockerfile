@@ -5,7 +5,7 @@ WORKDIR /root
 
 COPY ENTRYPOINT.sh /
 
-COPY ../battery/bake.py /
+COPY battery/bake.py /
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
