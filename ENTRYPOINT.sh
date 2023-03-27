@@ -7,4 +7,4 @@ bash
 
 service openvswitch-switch stop
 
-python3 /miniverse.py
+python3 /miniverse.py &
