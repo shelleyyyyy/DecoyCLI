@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN apt update -y
 RUN apt install software-properties-common -y
-RUN apt install python3.8
+RUN apt install python3.8 -y
 
 # install pip3
 
