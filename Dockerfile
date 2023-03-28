@@ -29,18 +29,19 @@ COPY h1_squid.sh /
 #  && touch /etc/network/interfaces \
 #  && chmod +x /ENTRYPOINT.sh
 
+RUN apt update -y
 
 RUN apt install nano
 
 # install python3
 
-RUN apt update -y
+# RUN apt update -y
 RUN apt install software-properties-common -y
 RUN apt install python3.8 -y
 
 # install pip3
 
-RUN apt update -y
+# RUN apt update -y
 RUN apt install python3-pip -y
 
 # install dependencies
