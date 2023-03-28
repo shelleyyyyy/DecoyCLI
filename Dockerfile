@@ -52,6 +52,7 @@ RUN apt install mosquitto-clients -y
 # RUN pip3 install -r /requirements.txt
 RUN pip3 install neo4j
 RUN pip3 install mininet
+RUN pip3 install paho-mqtt
 
 # create link to controller
 
