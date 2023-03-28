@@ -30,11 +30,13 @@ class Neo4jConnection:
                 session.close()
         return response
 
-topo = "topo1"
+topo = "topoD"
 
 topo_decoy = {
     "type": "topo",
     "name": topo,
+    "device": "na",
+    "topic": "na",
     "conn": [
 
     ],
@@ -42,6 +44,8 @@ topo_decoy = {
         {
             "type": "switch",
             "name": "s1",
+            "device": "temp",
+            "topic": "/sim/tmp",
             "conn": [
                 {
                     "name": topo
@@ -54,6 +58,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h1",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s1"
@@ -66,6 +72,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h2",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s1"
@@ -78,6 +86,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h3",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s1"
@@ -92,6 +102,8 @@ topo_decoy = {
         {
             "type": "switch",
             "name": "s2",
+            "device": "temp",
+            "topic": "/sim/tmp",
             "conn": [
                 {
                     "name": topo
@@ -104,6 +116,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h4",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s2"
@@ -116,6 +130,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h5",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s2"
@@ -128,6 +144,8 @@ topo_decoy = {
                  {
                     "type": "host",
                     "name": "h6",
+                    "device": "temp",
+                    "topic": "/sim/tmp",
                     "conn": [
                         {
                             "name": "s2"
@@ -144,12 +162,12 @@ topo_decoy = {
 
 conn = Neo4jConnection(uri="bolt://10.10.10.65:7687", user="neo4j", pwd="securepassword123")
 
-def addNode(conn_arr, type, name, children):
-    arr = [type, name, topo]
+def addNode(conn_arr, type, name, children, device, topic):
+    arr = [type, name, topo, device, topic]
 
     conn.query(
         """
-            Create(s:{0} {{name: "{1}", type: "{0}", topo: "{2}"}})
+            Create(s:{0} {{name: "{1}", type: "{0}", topo: "{2}", device: "{3}", topic: "{4}"}})
         """.format(*arr)
     )
 
@@ -166,7 +184,7 @@ def addNode(conn_arr, type, name, children):
         )
 
     for x in children:
-        addNode(x['conn'], x['type'], x['name'], x['children'])
+        addNode(x['conn'], x['type'], x['name'], x['children'], x['device'], x['topic'])
     
-addNode(topo_decoy['conn'], topo_decoy['type'], topo_decoy['name'], topo_decoy['children'])
+addNode(topo_decoy['conn'], topo_decoy['type'], topo_decoy['name'], topo_decoy['children'], topo_decoy['device'], topo_decoy['topic'])
 
