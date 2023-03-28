@@ -29,7 +29,8 @@ def make_net():
         try:
             if x['type'] == "host":
                 host = net.addHost(x['name'], defaultRoute=default_route)
-                host.cmd("bash /./h1_squid.sh")
+                host.popen("bash /./h1_squid.sh")
+                host.popen("bash echo " + x['device'] + " > test.txt")
                 nodes.append(host)
             elif x['type'] == "switch":
                 switch = net.addSwitch(x['name'])
