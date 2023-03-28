@@ -11,6 +11,9 @@ topo = "topo11"
 # set the default gw ip/ nat ip
 nat_ip = "10.0.0.69"
 
+def start_command(host):
+    host.cmd('/./h1_squid.sh')
+
 def make_net():
     net = Mininet(controller=Controller)
 
@@ -25,7 +28,7 @@ def make_net():
 
         try:
             if x['type'] == "host":
-                host = net.addHost(x['name'], defaultRoute=default_route)
+                host = net.addHost(x['name'], defaultRoute=default_route, cmd=start_command)
                 nodes.append(host)
             elif x['type'] == "switch":
                 switch = net.addSwitch(x['name'])
