@@ -1,33 +1,36 @@
-FROM ubuntu:18.04
+FROM iwaseyusuke/mininet
 
 USER root
 WORKDIR /root
 
-COPY ENTRYPOINT.sh /
+# COPY ENTRYPOINT.sh /
 
 COPY battery /
 COPY battery /
 COPY h1_squid.sh /
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    dnsutils \
-    ifupdown \
-    iproute2 \
-    iptables \
-    iputils-ping \
-    mininet \
-    net-tools \
-    openvswitch-switch \
-    openvswitch-testcontroller \
-    tcpdump \
-    vim \
-    x11-xserver-utils \
-    xterm \
-    nano \
- && rm -rf /var/lib/apt/lists/* \
- && touch /etc/network/interfaces \
- && chmod +x /ENTRYPOINT.sh
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     curl \
+#     dnsutils \
+#     ifupdown \
+#     iproute2 \
+#     iptables \
+#     iputils-ping \
+#     mininet \
+#     net-tools \
+#     openvswitch-switch \
+#     openvswitch-testcontroller \
+#     tcpdump \
+#     vim \
+#     x11-xserver-utils \
+#     xterm \
+#     nano \
+#  && rm -rf /var/lib/apt/lists/* \
+#  && touch /etc/network/interfaces \
+#  && chmod +x /ENTRYPOINT.sh
+
+
+RUN apt install nano
 
 # install python3
 
@@ -55,9 +58,9 @@ RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 
 
-EXPOSE 6633 6653 6640
+# EXPOSE 6633 6653 6640
 
-ENTRYPOINT ["/ENTRYPOINT.sh"]
+# ENTRYPOINT ["/ENTRYPOINT.sh"]
 
 # CMD [ "python3", "/miniverse.py", "&"]
 
