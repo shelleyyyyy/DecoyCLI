@@ -7,7 +7,7 @@ from mininet.log import setLogLevel, info
 from tugboat import getAll, getConnections
 
 # set the topo from neo4j
-topo = "topo11"
+topo = "topoD"
 # set the default gw ip/ nat ip
 nat_ip = "10.0.0.69"
 
