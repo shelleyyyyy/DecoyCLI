@@ -1,7 +1,7 @@
 FROM iwaseyusuke/mininet
 
 USER root
-WORKDIR /root
+WORKDIR /app
 
 # COPY ENTRYPOINT.sh /
 
