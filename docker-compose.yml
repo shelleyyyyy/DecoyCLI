@@ -17,11 +17,14 @@ version: '3.9'
 services:
   grit-chamber:
     build: .
-  tty: true
-  privileged: true
-  volumes:
-    - /tmp/.X11-unix:/tmp/.X11-unix
-    - /lib/modules:/lib/modules
+    tty: true
+    network_mode: "bridge"
+    privileged: true
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /lib/modules:/lib/modules
   # intake:
   #   build: .
   #   tty: true
