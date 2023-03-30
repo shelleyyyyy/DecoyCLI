@@ -18,7 +18,6 @@ services:
   grit-chamber:
     build: .
   tty: true
-  network_mode: bridge
   privileged: true
   volumes:
     - /tmp/.X11-unix:/tmp/.X11-unix
