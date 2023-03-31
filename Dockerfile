@@ -5,9 +5,8 @@ WORKDIR /app
 
 # COPY ENTRYPOINT.sh /
 
-COPY battery /
-COPY battery /
-COPY h1_squid.sh /
+COPY battery /app
+COPY h1_squid.sh /app
 
 # RUN apt-get update && apt-get install -y --no-install-recommends \
 #     curl \
