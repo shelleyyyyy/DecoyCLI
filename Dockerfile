@@ -46,6 +46,7 @@ RUN apt install python3-pip -y
 # install dependencies
 
 RUN apt install mosquitto-clients -y
+RUN apt install bc
 
 
 # RUN pip3 install -r /requirements.txt
