@@ -58,7 +58,7 @@ RUN pip3 install paho-mqtt
 
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller 
 
-
+CMD ["python3", "/app/miniverse.py"]
 
 # EXPOSE 6633 6653 6640
 
