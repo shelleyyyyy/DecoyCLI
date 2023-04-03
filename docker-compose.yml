@@ -1,37 +1,14 @@
-# version: '3'
-# services:
-#   mininet:
-#     build:
-#       context: .
-#     image: iwaseyusuke/mininet
-#     tty: true
-#     network_mode: "bridge"
-#     privileged: true
-#     environment:
-#      - DISPLAY
-#     volumes:
-#      - /tmp/.X11-unix:/tmp/.X11-unix
-#      - /lib/modules:/lib/modules
-
-version: '3.9'
+version: '3'
 services:
-  grit-chamber:
-    build: .
+  mininet:
+    build:
+      context: .
+    image: iwaseyusuke/mininet
     tty: true
     network_mode: "bridge"
     privileged: true
     environment:
-      - DISPLAY
+     - DISPLAY
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - /lib/modules:/lib/modules
-  # intake:
-  #   build: .
-  #   tty: true
-  #   network_mode: "bridge"
-  #   privileged: true
-  #   environment:
-  #     - DISPLAY
-  #   volumes:
-  #     - /tmp/.X11-unix:/tmp/.X11-unix
-  #     - /lib/modules:/lib/modules
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - /lib/modules:/lib/modules
