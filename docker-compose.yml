@@ -1,6 +1,30 @@
 version: '3'
 services:
-  mininet:
+  mininet_1:
+    build:
+      context: .
+    # image: iwaseyusuke/mininet
+    tty: true
+    network_mode: "bridge"
+    privileged: true
+    environment:
+     - DISPLAY
+    volumes:
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - /lib/modules:/lib/modules
+  mininet_2:
+    build:
+      context: .
+    # image: iwaseyusuke/mininet
+    tty: true
+    network_mode: "bridge"
+    privileged: true
+    environment:
+     - DISPLAY
+    volumes:
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - /lib/modules:/lib/modules
+  mininet_3:
     build:
       context: .
     # image: iwaseyusuke/mininet
